@@ -43,13 +43,12 @@ services:
       - ./frontend/:/frontend
       - build_folder:/frontend/build
       - ./frontend/node_modules/:/frontend/node_modules
-    tty: true
 
   # nginx 컨테이너(서버)
   nginx:
     build: ./nginx
     ports:
-      - 80:8080
+      - 8080:8080
     volumes:
       - static_volume:/backend/staticfiles
       - media_volume:/backend/mediafiles
